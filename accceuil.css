@@ -1,0 +1,427 @@
+/* === RESET GENERAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* === PAGE D'ACCUEIL === */
+.home-page .welcome-container {
+    text-align: center;
+    margin-top: 20vh; /* Décalage du contenu pour un positionnement centré */
+}
+
+.welcome-text {
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #fff;
+    animation: neonBlink 1.5s infinite alternate;
+    white-space: nowrap;
+}
+
+.start-button {
+    position: absolute;
+    bottom: 20%; /* Position en bas de la page */
+    left: 50%;
+    transform: translateX(-50%); /* Centre parfaitement */
+    padding: 20px 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    text-shadow: 0 0 3px #ccc, 0 0 7px #bbb, 0 0 15px #aaa, 0 0 30px #999; /* Lueur blanche douce */
+    animation: neonBlink 1.5s infinite alternate; /* Animation clignotement */
+}
+
+
+.start-button:hover {
+    background-color: white;
+    color: black;
+    transform: translateX(-50%) scale(1.1);
+}
+
+
+
+/* === FLECHE DE RETOUR === */
+.return-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.return-button:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+/* === PAGES CONTENUS === */
+.content-page .section-container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 10vh; /* Décalage pour avoir un peu d'espace en haut */
+}
+
+h1 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+p, ul {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+li i {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+
+
+/* === ANIMATIONS === */
+@keyframes neonBlink {
+    0%, 100% {
+        text-shadow: 0 0 3px #ccc, 0 0 7px #bbb, 0 0 15px #aaa, 0 0 30px #999;
+    }
+    50% {
+        text-shadow: 0 0 2px #bbb, 0 0 5px #aaa, 0 0 10px #999, 0 0 20px #888;
+    }
+}
+
+/* === FOOTER === */
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .copyright-icon {
+    background-color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.4rem;
+    color: white;
+}
+
+
+
+/* === VIDÉO EN ARRIÈRE-PLAN === */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #060913;
+    color: #fff;
+    overflow: hidden;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+/* Style global */
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #000;
+    color: white;
+    padding-bottom: 50px; /* Pour ne pas que la navbar chevauche le contenu */
+}
+
+/* Style du fond vidéo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Placer la vidéo derrière le contenu */
+}
+
+/* Style de la barre de navigation */
+.navbar {
+    position: fixed;
+    bottom: 55px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+/* Liste d'éléments de la navbar */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 20px;
+}
+
+/* Liens de la navbar */
+.navbar a {
+    position: relative; /* Nécessaire pour utiliser ::after */
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+    z-index: 1; /* Assure que le texte reste au-dessus */
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Position initiale sous le texte */
+    left: 0;
+    width: 100%; /* Le trait est déjà visible */
+    height: 3px; /* Épaisseur du trait */
+    background-color: white; /* Couleur du soulignement */
+    opacity: 0.7; /* Rendre le rectangle légèrement transparent */
+    z-index: -1; /* Place le rectangle derrière le texte */
+    transition: height 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease; /* Animation de la hauteur et de la lueur */
+}
+
+.navbar a:hover::after {
+    height: 100%; /* Le trait se transforme en un rectangle couvrant tout le lien */
+    background-color: grey; /* Couleur du rectangle au survol */
+    opacity: 0.9; /* Ajuste la transparence pour un effet plus visible */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Ajout d'une lueur lumineuse */
+}
+
+.navbar a:hover {
+    color: white; /* Assure que le texte reste visible */
+}
+/* Style pour les sections */
+section {
+    padding: 50px 20px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour les sections */
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Effet de transition pour les liens */
+.navbar a {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Retourner au bouton */
+.return-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-decoration: none;
+}
+
+.return-button:hover {
+    background-color: grey;
+    opacity: 0.9; /* Ajuste la transparence pour un effet plus visible */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Ajout d'une lueur lumineuse */
+}
+
+.section-container {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 16px;
+    color: white; /* Change la couleur de la police en blanc */
+    line-height: 1.5;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-container h1 {
+    font-size: 1.5rem;
+    color: white; /* Assure que les titres sont également blancs */
+    margin-bottom: 20px;
+}
+
+.section-container p {
+    font-size: 1.7rem;
+    color: white; /* Assure que les paragraphes sont également blancs */
+}
+
+/* Style pour les icônes sociales */
+.social-icons {
+    position: fixed;
+    top: 50%; /* Centre verticalement */
+    right: 20px; /* Positionne à 20px du bord droit */
+    transform: translateY(-50%); /* Centre parfaitement les icônes */
+    display: flex;
+    flex-direction: column; /* Aligne les icônes verticalement */
+    gap: 15px; /* Espacement entre les icônes */
+    z-index: 1000; /* Assure que les icônes sont au-dessus des autres éléments */
+}
+
+.social-link {
+    color: white; /* Couleur des icônes */
+    font-size: 2rem; /* Taille des icônes */
+    transition: color 0.3s ease; /* Animation au survol */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+.social-link:hover {
+    color: #0077b5; /* Change la couleur au survol (LinkedIn bleu par défaut) */
+    transform: scale(1.5); /* Agrandit l'icône au survol */
+}
+
+
+/* Style de la timeline */
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    padding: 20px 0;
+    width: 80%;
+    max-width: 800px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    padding-left: 40px;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0; /* Caché par défaut */
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: #f39c12;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 24px;
+    width: 2px;
+    height: 100%;
+    background-color: #f39c12;
+    z-index: 0;
+}
+
+.timeline-content {
+    background-color: transparent;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation pour faire apparaître les éléments */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation différée pour chaque élément */
+.timeline-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.timeline-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.timeline-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Conteneur pour le logo centré */
+.center-logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem; /* Taille du logo */
+    color: white;
+    opacity: 0; /* Caché par défaut */
+    pointer-events: none; /* Empêche les interactions avec le logo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Au-dessus de tout */
+}
+
+/* Animation pour afficher le logo */
+.center-logo.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1); /* Légèrement agrandi */
+}
+
